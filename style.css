@@ -1,0 +1,1235 @@
+/* ============================================================
+   RESTAURANT RESERVATION SYSTEM — Master Stylesheet
+   Theme Colors: #112250 (Royal) | #F5F0E9 (Swan) | #3C507D (Sapphire)
+   Accent: #C8A96E (Gold)
+   Fonts: Playfair Display (headings) | Nunito (body)
+   Layout: Wireframe-aligned structure with proper theme
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* ── ROOT VARIABLES ── */
+:root {
+  --royal:   #112250;
+  --swan:    #F5F0E9;
+  --sapphire:#3C507D;
+  --accent:  #C8A96E;
+  --accent-dark: #a07830;
+  --white:   #ffffff;
+  --light-bg:#f4f5f8;
+  --grey-bg: #e8e8e8;
+  --border:  rgba(17,34,80,0.12);
+  --shadow:  0 4px 20px rgba(17,34,80,0.10);
+  --shadow-lg: 0 12px 40px rgba(17,34,80,0.16);
+  --radius:  10px;
+  --radius-lg: 16px;
+  --transition: all 0.25s ease;
+}
+
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #333;
+  background: var(--swan);
+  line-height: 1.7;
+}
+h1,h2,h3,h4,h5,h6 { font-family: 'Playfair Display', serif; }
+a { text-decoration: none; }
+
+/* ── SHARED: Nav logo box ── */
+.wf-nav-logo-box {
+  background: var(--sapphire);
+  color: var(--swan);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 7px 20px;
+  border-radius: 6px;
+  display: inline-block;
+  letter-spacing: 0.02em;
+}
+
+/* ── SHARED: Simple copyright footer ── */
+.wf-simple-footer {
+  background: var(--royal);
+  color: rgba(245,240,233,0.55);
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 18px;
+  border-top: 1px solid rgba(245,240,233,0.08);
+}
+
+/* ── SHARED: Form elements ── */
+.wf-form-group { margin-bottom: 18px; }
+.wf-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--royal);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.wf-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--white);
+  font-size: 0.93rem;
+  color: #333;
+  font-family: 'Nunito', sans-serif;
+  transition: var(--transition);
+}
+.wf-input:focus {
+  outline: none;
+  border-color: var(--sapphire);
+  box-shadow: 0 0 0 3px rgba(60,80,125,0.12);
+}
+.wf-textarea { min-height: 120px; resize: vertical; }
+.wf-select { appearance: auto; cursor: pointer; }
+
+/* ── PUBLIC NAVBAR (About, Contact pages) ── */
+.wf-public-body { background: var(--swan); min-height: 100vh; }
+.wf-public-nav {
+  background: var(--royal);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(17,34,80,0.15);
+}
+.wf-public-nav .container-fluid {
+  position: relative;
+}
+.wf-public-nav-links {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.wf-public-nav-links a {
+  color: rgba(245,240,233,0.8);
+  font-size: 0.93rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 6px;
+  transition: var(--transition);
+  letter-spacing: 0.03em;
+}
+.wf-public-nav-links a:hover,
+.wf-public-nav-links a.active {
+  color: var(--swan);
+  background: rgba(255,255,255,0.1);
+}
+
+/* ============================================================
+   LOGIN PAGE
+   ============================================================ */
+.wf-login-body {
+  background: var(--light-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.wf-login-nav {
+  background: var(--royal);
+  padding: 14px 0;
+  box-shadow: 0 2px 8px rgba(17,34,80,0.15);
+}
+.wf-login-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+}
+.wf-login-nav-link {
+  color: rgba(245,240,233,0.85);
+  font-size: 0.93rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+.wf-login-nav-link:hover { color: var(--swan); background: rgba(255,255,255,0.1); }
+
+.wf-login-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light-bg);
+  padding: 60px 16px;
+}
+.wf-login-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 44px 48px 36px;
+  width: 100%;
+  max-width: 440px;
+  border-top: 5px solid var(--royal);
+}
+.wf-login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--royal);
+  text-align: center;
+  margin-bottom: 6px;
+}
+.wf-login-underline {
+  width: 44px;
+  height: 3px;
+  background: var(--accent);
+  margin: 0 auto 30px;
+  border-radius: 2px;
+}
+.wf-login-btn {
+  width: 100%;
+  background: var(--royal);
+  color: var(--swan);
+  border: none;
+  border-radius: var(--radius);
+  padding: 13px;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 8px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: var(--transition);
+  font-family: 'Nunito', sans-serif;
+}
+.wf-login-btn:hover { background: var(--sapphire); transform: translateY(-1px); }
+.wf-login-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   DASHBOARD PAGE
+   ============================================================ */
+.wf-dash-body { background: var(--light-bg); min-height: 100vh; }
+.wf-dash-wrapper {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Sidebar */
+.wf-sidebar {
+  width: 230px;
+  min-width: 230px;
+  background: var(--royal);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100vh;
+  overflow: hidden;
+  transition: width 0.28s ease, min-width 0.28s ease;
+}
+.wf-sidebar-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(245,240,233,0.1);
+}
+.wf-sidebar-burger { font-size: 1.1rem; color: rgba(245,240,233,0.6); cursor: pointer; }
+.wf-sidebar-nav { display: flex; flex-direction: column; padding: 16px 0; }
+.wf-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 22px;
+  color: rgba(245,240,233,0.72);
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-left: 3px solid transparent;
+  transition: var(--transition);
+}
+.wf-sidebar-link:hover,
+.wf-sidebar-link.active {
+  background: rgba(245,240,233,0.08);
+  color: var(--swan);
+  border-left-color: var(--accent);
+}
+
+/* Dash main */
+.wf-dash-main { flex: 1; display: flex; flex-direction: column; overflow: auto; }
+.wf-dash-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 28px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.wf-logout-btn {
+  color: var(--royal);
+  font-size: 0.92rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+.wf-logout-btn:hover { color: var(--sapphire); }
+.wf-dash-content { padding: 32px 32px; }
+.wf-dash-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--royal);
+  margin-bottom: 28px;
+}
+
+/* Stat cards */
+.wf-stat-row { display: flex; gap: 22px; margin-bottom: 36px; flex-wrap: wrap; }
+.wf-stat-card {
+  flex: 1;
+  min-width: 180px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--royal);
+  transition: var(--transition);
+}
+.wf-stat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.wf-stat-icon { font-size: 2rem; color: var(--sapphire); margin-bottom: 12px; display: block; }
+.wf-stat-number { font-size: 2.2rem; font-weight: 700; color: var(--royal); font-family: 'Playfair Display', serif; }
+.wf-stat-label { font-size: 0.82rem; color: #888; font-weight: 700; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Dashboard table */
+.wf-table-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.wf-table-card-header {
+  background: var(--royal);
+  color: var(--swan);
+  padding: 14px 22px;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+.wf-table { width: 100%; border-collapse: collapse; }
+.wf-table thead th {
+  background: var(--royal);
+  color: var(--swan);
+  padding: 12px 18px;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(245,240,233,0.15);
+}
+.wf-table tbody td {
+  padding: 12px 18px;
+  font-size: 0.92rem;
+  color: #333;
+  border-bottom: 1px solid var(--border);
+}
+.wf-table tbody tr:last-child td { border-bottom: none; }
+.wf-table tbody tr:hover { background: rgba(17,34,80,0.03); }
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+.wf-about-hero { background: var(--swan); }
+.wf-about-imgcol {
+  background: #d0d0d0;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.wf-ximg-full {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wf-ximg-full svg { width: 70%; height: auto; opacity: 0.7; }
+.wf-about-textcol {
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.wf-about-text-content { padding: 56px 52px; }
+.wf-about-heading {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--royal);
+  margin-bottom: 18px;
+}
+.wf-about-desc { font-size: 0.97rem; color: #555; line-height: 1.85; margin: 0; }
+
+/* Mission & Vision */
+.wf-mission-section { padding: 60px 0; background: var(--light-bg); }
+.wf-section-center-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--royal);
+  text-align: center;
+  margin-bottom: 36px;
+}
+.wf-mv-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  height: 100%;
+  transition: var(--transition);
+}
+.wf-mv-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.wf-mv-card-header {
+  background: var(--royal);
+  padding: 14px 22px;
+}
+.wf-mv-title { font-weight: 700; font-size: 1rem; color: var(--swan); font-family: 'Nunito', sans-serif; }
+.wf-mv-card-body {
+  padding: 24px 22px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.wf-mv-icon { font-size: 1.6rem; color: var(--sapphire); margin-top: 2px; flex-shrink: 0; }
+.wf-mv-card-body p { font-size: 0.92rem; color: #555; line-height: 1.75; margin: 0; }
+
+/* Team section */
+.wf-team-section { padding: 60px 0 70px; background: var(--swan); }
+.wf-team-card {
+  background: var(--sapphire);
+  border-radius: var(--radius-lg);
+  padding: 36px 24px 28px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border: none;
+  transition: var(--transition);
+}
+.wf-team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.wf-team-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 18px;
+  border: 4px solid rgba(245,240,233,0.25);
+  background: #fff;
+}
+.wf-team-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.wf-team-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.05rem; color: var(--swan); margin-bottom: 4px; }
+.wf-team-pos { font-size: 0.85rem; color: rgba(245,240,233,0.65); font-weight: 600; }
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.wf-contact-section { padding: 52px 0 36px; background: var(--swan); }
+.wf-contact-form-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--royal);
+  margin-bottom: 24px;
+}
+.wf-contact-send-btn {
+  width: 100%;
+  background: var(--royal);
+  color: var(--swan);
+  border: none;
+  border-radius: var(--radius);
+  padding: 13px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  font-family: 'Nunito', sans-serif;
+  transition: var(--transition);
+}
+.wf-contact-send-btn:hover { background: var(--sapphire); transform: translateY(-1px); }
+.wf-contact-info-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--royal);
+  margin-bottom: 24px;
+}
+.wf-contact-info-list { display: flex; flex-direction: column; gap: 22px; }
+.wf-contact-info-item { display: flex; align-items: flex-start; gap: 16px; }
+.wf-ci-icon { font-size: 1.5rem; color: var(--royal); margin-top: 2px; flex-shrink: 0; }
+.wf-ci-label { font-weight: 700; font-size: 0.95rem; color: var(--royal); margin-bottom: 3px; font-family: 'Playfair Display', serif; }
+.wf-ci-value { font-size: 0.9rem; color: #555; }
+.wf-map-placeholder {
+  position: relative;
+  height: 180px;
+  background: #d0d0d0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.wf-map-pin { position: absolute; font-size: 2.4rem; color: var(--royal); z-index: 2; }
+
+/* ============================================================
+   RESERVATION FORM PAGE
+   ============================================================ */
+.wf-resv-section { padding: 52px 0 40px; background: var(--swan); min-height: calc(100vh - 56px - 57px); }
+.wf-resv-main-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--royal);
+  text-align: center;
+  margin-bottom: 8px;
+}
+.wf-resv-underline {
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 0 auto 36px;
+  border-radius: 2px;
+}
+.wf-resv-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 40px 44px;
+  max-width: 860px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+.wf-resv-submit-row { margin-top: 28px; }
+.wf-resv-submit-btn {
+  width: 100%;
+  background: var(--royal);
+  color: var(--swan);
+  border: none;
+  border-radius: var(--radius);
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  font-family: 'Nunito', sans-serif;
+  transition: var(--transition);
+}
+.wf-resv-submit-btn:hover { background: var(--sapphire); transform: translateY(-1px); }
+
+/* ============================================================
+   RECORDS / TABLE LIST PAGE
+   ============================================================ */
+.wf-records-section { padding: 40px 0 60px; background: var(--swan); min-height: calc(100vh - 56px); }
+.wf-records-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--royal);
+  margin-bottom: 24px;
+}
+.wf-records-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+.wf-records-table thead th {
+  background: var(--royal);
+  color: var(--swan);
+  padding: 13px 18px;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.wf-records-table tbody td {
+  padding: 12px 18px;
+  font-size: 0.92rem;
+  color: #333;
+  border-bottom: 1px solid var(--border);
+}
+.wf-records-table tbody tr:last-child td { border-bottom: none; }
+.wf-records-table tbody tr:nth-child(even) { background: rgba(17,34,80,0.02); }
+.wf-records-table tbody tr:hover { background: rgba(17,34,80,0.05); }
+
+/* ============================================================
+   LANDING PAGE (index.html)
+   ============================================================ */
+
+/* ── LANDING NAVBAR ── */
+#mainNav {
+  background: var(--royal);
+  padding: 13px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(17,34,80,0.15);
+}
+#mainNav .navbar-brand { gap: 10px; }
+.brand-icon {
+  background: var(--accent);
+  color: var(--royal);
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+}
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  color: var(--swan);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+#mainNav .navbar-nav.mx-auto .nav-link {
+  color: rgba(245,240,233,0.82);
+  font-weight: 600;
+  font-size: 0.93rem;
+  padding: 7px 16px;
+  border-radius: 6px;
+  transition: var(--transition);
+  letter-spacing: 0.03em;
+}
+#mainNav .navbar-nav.mx-auto .nav-link:hover,
+#mainNav .navbar-nav.mx-auto .nav-link.active {
+  color: var(--swan);
+  background: rgba(255,255,255,0.1);
+}
+#mainNav .btn-outline-light {
+  border-color: rgba(245,240,233,0.5);
+  color: var(--swan);
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 7px 22px;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+#mainNav .btn-outline-light:hover { background: var(--swan); color: var(--royal); }
+#mainNav .navbar-toggler { border-color: rgba(245,240,233,0.4); }
+#mainNav .navbar-toggler-icon { filter: invert(1); }
+
+/* ── HERO SECTION ── */
+.lp-hero { background: var(--swan); border-bottom: 1px solid var(--border); overflow: hidden; }
+.lp-hero-row { min-height: 500px; }
+.lp-hero-imgcol {
+  background: #d0d0d0;
+  position: relative;
+  min-height: 400px;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.lp-hero-imgbox { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+.lp-wireframe-img { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.lp-wireframe-img svg { width: 55%; height: auto; opacity: 0.6; }
+.lp-hero-textcol { background: var(--white); display: flex; align-items: center; }
+.lp-hero-content { padding: 60px 56px 60px 48px; max-width: 620px; }
+.lp-hero-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--royal);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.lp-hero-desc { font-size: 0.97rem; color: #555; line-height: 1.82; margin-bottom: 32px; }
+.lp-btn-reserve {
+  background: var(--royal);
+  color: var(--swan);
+  font-weight: 700;
+  border-radius: var(--radius);
+  padding: 12px 34px;
+  font-size: 0.95rem;
+  border: 2px solid var(--royal);
+  transition: var(--transition);
+  font-family: 'Nunito', sans-serif;
+}
+.lp-btn-reserve:hover { background: var(--sapphire); border-color: var(--sapphire); color: var(--swan); transform: translateY(-1px); }
+
+/* ── POPULAR DISHES ── */
+.lp-dishes { background: var(--light-bg); padding: 70px 0 80px; }
+.lp-dishes-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--royal);
+  text-align: center;
+  margin-bottom: 44px;
+}
+.lp-dish-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  height: 100%;
+}
+.lp-dish-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.lp-dish-imgbox {
+  width: 100%; height: 200px;
+  background: #d0d0d0;
+  overflow: hidden; display: flex; align-items: center; justify-content: center;
+}
+.lp-dish-imgbox svg { width: 100%; height: 100%; }
+.lp-dish-info {
+  background: var(--royal);
+  color: var(--swan);
+  margin: 16px;
+  border-radius: 50px;
+  padding: 16px 24px;
+  text-align: center;
+}
+.lp-dish-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--swan); margin-bottom: 4px; }
+.lp-dish-desc { font-size: 0.82rem; color: rgba(245,240,233,0.8); margin-bottom: 6px; line-height: 1.5; }
+.lp-dish-price { font-size: 1.05rem; font-weight: 700; color: var(--accent); font-family: 'Playfair Display', serif; margin: 0; }
+
+/* ── OUR POPULAR DISHES (about row) ── */
+.lp-about { background: var(--swan); padding: 70px 0 80px; border-top: 1px solid var(--border); }
+.lp-about-title { font-size: 1.7rem; font-weight: 700; color: var(--royal); margin-bottom: 16px; }
+.lp-about-desc { font-size: 0.97rem; color: #555; line-height: 1.85; margin-bottom: 28px; }
+.lp-btn-readmore {
+  background: var(--royal);
+  color: var(--swan);
+  font-weight: 700;
+  border-radius: var(--radius);
+  padding: 11px 30px;
+  font-size: 0.93rem;
+  border: 2px solid var(--royal);
+  transition: var(--transition);
+  font-family: 'Nunito', sans-serif;
+}
+.lp-btn-readmore:hover { background: var(--sapphire); border-color: var(--sapphire); color: var(--swan); }
+.lp-about-imgbox {
+  width: 100%; height: 260px;
+  background: #d0d0d0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.lp-about-imgbox svg { width: 100%; height: 100%; }
+
+/* ── LANDING FOOTER ── */
+.lp-footer { background: var(--royal); color: var(--swan); padding: 52px 0 28px; }
+.lp-footer-col { padding: 0 16px; }
+.lp-footer-col-center {
+  border-left: 1px solid rgba(245,240,233,0.12);
+  border-right: 1px solid rgba(245,240,233,0.12);
+}
+.lp-footer-icon-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.lp-footer-icon { font-size: 1.2rem; color: var(--accent); }
+.lp-footer-heading { font-family: 'Playfair Display', serif; color: var(--swan); font-weight: 700; font-size: 1rem; margin: 0; }
+.lp-footer-text { color: rgba(245,240,233,0.7); font-size: 0.9rem; line-height: 1.7; margin: 0; }
+.lp-footer-socials { display: flex; gap: 10px; margin-top: 4px; }
+.lp-social-btn {
+  width: 38px; height: 38px;
+  border-radius: 8px;
+  background: rgba(245,240,233,0.1);
+  color: var(--swan);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  border: 1px solid rgba(245,240,233,0.15);
+  transition: var(--transition);
+}
+.lp-social-btn:hover { background: var(--accent); color: var(--royal); border-color: var(--accent); }
+.lp-footer-hr { border-color: rgba(245,240,233,0.12); margin: 36px 0 18px; }
+.lp-footer-copy { text-align: center; font-size: 0.82rem; color: rgba(245,240,233,0.4); margin: 0; }
+
+/* ============================================================
+   THANK YOU PAGE
+   ============================================================ */
+.wf-thankyou-body {
+  background: var(--light-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 991px) {
+  .lp-hero-row { flex-direction: column; }
+  .lp-hero-imgcol { min-height: 250px; }
+  .lp-hero-content { padding: 40px 28px; max-width: 100%; }
+  .wf-sidebar { width: 100%; height: auto; position: relative; flex-direction: row; flex-wrap: wrap; }
+  .wf-dash-wrapper { flex-direction: column; }
+  .lp-footer-col-center { border: none; border-top: 1px solid rgba(245,240,233,0.12); border-bottom: 1px solid rgba(245,240,233,0.12); padding: 20px 16px; }
+}
+@media (max-width: 576px) {
+  .lp-hero-content { padding: 32px 20px; }
+  .lp-hero-title { font-size: 1.8rem; }
+  .wf-resv-card { padding: 28px 20px; }
+  .wf-login-card { padding: 36px 28px; }
+}
+
+
+/* ============================================================
+   PHOTO REPLACEMENTS — replaces all SVG X placeholders
+   ============================================================ */
+
+/* ── Hero photo (index.html left column) ── */
+.lp-hero-imgcol {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+.lp-hero-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── Dish card photos ── */
+.lp-dish-imgbox {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background: #d0d0d0;
+}
+.lp-dish-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.lp-dish-card:hover .lp-dish-photo {
+  transform: scale(1.05);
+}
+
+/* ── "Our Popular Dishes" section right photo ── */
+.lp-about-imgbox {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.lp-about-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+/* ── About page hero photo (left column) ── */
+.wf-about-imgcol {
+  padding: 0;
+  overflow: hidden;
+  min-height: 380px;
+}
+.wf-about-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── Contact page map photo ── */
+.wf-map-placeholder {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+.wf-map-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: brightness(0.75) saturate(0.8);
+}
+.wf-map-pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-size: 2.8rem;
+  color: var(--accent);
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* ── Navbar Login button (about & contact pages) ── */
+.wf-nav-login-btn {
+  background: transparent;
+  color: var(--swan);
+  border: 2px solid rgba(245,240,233,0.5);
+  border-radius: 6px;
+  padding: 7px 22px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+.wf-nav-login-btn:hover {
+  background: var(--swan);
+  color: var(--royal);
+  border-color: var(--swan);
+}
+
+
+/* ============================================================
+   PURE CSS SIDEBAR TOGGLE — No JavaScript
+   Uses hidden checkbox + sibling selectors
+   ============================================================ */
+
+/* Hidden checkbox — the toggle engine */
+.sidebar-toggle-input {
+  display: none;
+}
+
+/* ── Hamburger label inside sidebar top ── */
+.wf-sidebar-burger-label {
+  font-size: 1.15rem;
+  color: rgba(245,240,233,0.7);
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+.wf-sidebar-burger-label:hover {
+  background: rgba(245,240,233,0.12);
+  color: var(--swan);
+}
+
+/* ── Hamburger label inside top bar (mobile) ── */
+.wf-topbar-burger {
+  font-size: 1.15rem;
+  color: var(--royal);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+.wf-topbar-burger:hover {
+  background: rgba(17,34,80,0.08);
+}
+
+/* ── Page title in topbar ── */
+.wf-topbar-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--royal);
+  margin-right: auto;
+  margin-left: 12px;
+}
+
+/* ── Sidebar logout link styling ── */
+.wf-sidebar-logout {
+  margin-top: auto;
+  border-top: 1px solid rgba(245,240,233,0.1);
+  color: rgba(245,240,233,0.5) !important;
+}
+.wf-sidebar-logout:hover {
+  color: #ff8a80 !important;
+  background: rgba(255,138,128,0.08) !important;
+  border-left-color: #ff8a80 !important;
+}
+
+/* ============================================================
+   SIDEBAR TOGGLE — Mobile slide-in + Desktop collapse
+   ============================================================ */
+
+/* ── MOBILE: sidebar hidden off-screen by default ── */
+@media (max-width: 991px) {
+  .wf-sidebar {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    height: 100vh;
+    z-index: 999;
+    transition: left 0.3s ease;
+    box-shadow: none;
+    width: 230px;
+    min-width: 230px;
+  }
+  /* Slide in when checked */
+  .sidebar-toggle-input:checked + .wf-dash-wrapper .wf-sidebar {
+    left: 0;
+    box-shadow: 4px 0 24px rgba(17,34,80,0.3);
+  }
+  /* Dark overlay */
+  .sidebar-toggle-input:checked + .wf-dash-wrapper::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(17,34,80,0.5);
+    z-index: 998;
+  }
+  .wf-dash-main { width: 100%; }
+  /* Show topbar burger on mobile */
+  .wf-topbar-burger { display: flex; }
+}
+
+/* ── DESKTOP: sidebar always visible, hamburger collapses it ── */
+@media (min-width: 992px) {
+  .wf-sidebar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 230px;
+    min-width: 230px;
+    transition: width 0.28s ease, min-width 0.28s ease;
+    overflow: hidden;
+  }
+  /* Hide topbar burger on desktop — use sidebar burger instead */
+  .wf-topbar-burger { display: none; }
+
+  /* ── COLLAPSED: icon-only 64px strip ── */
+  .sidebar-toggle-input:checked + .wf-dash-wrapper .wf-sidebar {
+    width: 64px;
+    min-width: 64px;
+  }
+  /* Hide logo box */
+  .sidebar-toggle-input:checked + .wf-dash-wrapper .wf-sidebar .wf-nav-logo-box {
+    display: none;
+  }
+  /* Center hamburger label */
+  .sidebar-toggle-input:checked + .wf-dash-wrapper .wf-sidebar .wf-sidebar-top {
+    justify-content: center;
+    padding: 16px 0;
+  }
+  /* Center icons, hide span text */
+  .sidebar-toggle-input:checked + .wf-dash-wrapper .wf-sidebar .wf-sidebar-link {
+    justify-content: center;
+    padding: 13px 0;
+  }
+  .sidebar-toggle-input:checked + .wf-dash-wrapper .wf-sidebar .wf-sidebar-link span {
+    display: none;
+  }
+  .sidebar-toggle-input:checked + .wf-dash-wrapper .wf-sidebar .wf-sidebar-link i {
+    font-size: 1.2rem;
+    margin: 0;
+    min-width: auto;
+  }
+  /* Keep active border visible */
+  .sidebar-toggle-input:checked + .wf-dash-wrapper .wf-sidebar .wf-sidebar-link.active {
+    border-left: 3px solid var(--accent);
+  }
+}
+/* ============================================================
+   PUBLIC PAGES NAVBAR — Pure CSS hamburger (about, contacts)
+   ============================================================ */
+.lp-nav-toggle-input { display: none; }
+
+.lp-nav {
+  background: var(--royal);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 2px 8px rgba(17,34,80,0.15);
+}
+.lp-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  position: relative;
+}
+.lp-nav .navbar-brand { color: var(--swan); }
+.lp-nav .brand-icon {
+  background: var(--accent);
+  color: var(--royal);
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px;
+}
+.lp-nav .brand-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--swan);
+}
+.lp-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.lp-nav-link {
+  color: rgba(245,240,233,0.82);
+  font-size: 0.93rem;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 6px;
+  transition: var(--transition);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.lp-nav-link:hover, .lp-nav-link.active {
+  color: var(--swan);
+  background: rgba(255,255,255,0.1);
+}
+.lp-nav-login {
+  color: var(--swan);
+  border: 2px solid rgba(245,240,233,0.5);
+  border-radius: 6px;
+  padding: 7px 22px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: var(--transition);
+  margin-left: 200px;
+}
+.lp-nav-login:hover { background: var(--swan); color: var(--royal); border-color: var(--swan); }
+
+/* Hamburger hidden on desktop */
+.lp-nav-burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: var(--transition);
+}
+.lp-nav-burger:hover { background: rgba(255,255,255,0.1); }
+.lp-nav-burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--swan);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+@media (max-width: 991px) {
+  .lp-nav-burger { display: flex; }
+
+  .lp-nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--royal);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 16px 18px;
+    box-shadow: 0 8px 24px rgba(17,34,80,0.25);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    transform: none;
+  }
+  .lp-nav-toggle-input:checked ~ .lp-nav .lp-nav-menu {
+    max-height: 400px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .lp-nav-link, .lp-nav-login {
+    padding: 11px 14px;
+    border-radius: 6px;
+    margin: 2px 0;
+  }
+  .lp-nav-login {
+    margin-left: 0;
+    margin-top: 6px;
+    text-align: center;
+    border: 2px solid rgba(245,240,233,0.35);
+  }
+  .lp-nav-toggle-input:checked ~ .lp-nav .lp-nav-burger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .lp-nav-toggle-input:checked ~ .lp-nav .lp-nav-burger span:nth-child(2) {
+    opacity: 0;
+  }
+  .lp-nav-toggle-input:checked ~ .lp-nav .lp-nav-burger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Team cards: single column, proper circular photo on mobile */
+  .wf-team-card {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* Dashboard: hide sidebar, show bottom nav */
+  .wf-sidebar { display: none !important; }
+  .wf-dash-main { width: 100%; }
+  .wf-dash-topbar { position: sticky; top: 0; z-index: 100; }
+  .wf-dash-content { padding: 20px 16px 80px; }
+  .wf-stat-row { flex-direction: column; gap: 14px; }
+}
+
+/* ============================================================
+   MOBILE BOTTOM NAV (dashboard pages)
+   ============================================================ */
+.wf-mobile-bottomnav {
+  display: none;
+}
+@media (max-width: 991px) {
+  .wf-mobile-bottomnav {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--royal);
+    z-index: 999;
+    box-shadow: 0 -2px 12px rgba(17,34,80,0.2);
+  }
+  .wf-mobile-nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 10px 4px;
+    color: rgba(245,240,233,0.6);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    transition: var(--transition);
+    text-transform: uppercase;
+  }
+  .wf-mobile-nav-item i {
+    font-size: 1.1rem;
+  }
+  .wf-mobile-nav-item:hover,
+  .wf-mobile-nav-item.active {
+    color: var(--accent);
+  }
+}

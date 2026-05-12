@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservation #001 — Kusina ni Lola</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body style="background:#f4f5f8;">
+
+<!-- TOP NAV -->
+<nav class="navbar sticky-top" id="mainNav" style="padding:12px 0;">
+  <div class="container-fluid px-4 d-flex align-items-center justify-content-between">
+    <a class="navbar-brand d-flex align-items-center gap-2 mb-0" href="dashboard.html">
+      <span class="brand-icon"><i class="fa-solid fa-utensils"></i></span>
+      <span class="brand-name">Kusina ni Lola</span>
+    </a>
+    <div class="d-flex align-items-center gap-3">
+      <span class="text-swan opacity-75" style="font-size:0.85rem;"><i class="fa-regular fa-circle-user me-1"></i>Admin</span>
+      <a href="login.html" class="btn btn-sm btn-outline-light px-3">
+        <i class="fa-solid fa-right-from-bracket me-1"></i>Logout
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid" style="padding:0;">
+  <div class="row g-0" style="min-height:calc(100vh - 60px);">
+
+    <!-- SIDEBAR -->
+    <div class="col-lg-2 col-md-3">
+      <div class="sidebar">
+        <div class="sidebar-brand">Menu</div>
+        <ul class="sidebar-nav">
+          <li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+          <li><a href="reservation.html"><i class="fa-solid fa-calendar-check"></i> New Reservation</a></li>
+          <li><a href="records.html" class="active"><i class="fa-solid fa-table-list"></i> All Reservations</a></li>
+          <li><a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+          <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+          <li><a href="index2.html"><i class="fa-solid fa-globe"></i> View Website</a></li>
+          <li style="margin-top:24px;"><a href="login.html" style="color:rgba(245,240,233,0.5)!important;"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="col-lg-10 col-md-9 p-4">
+
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h4 class="fw-bold mb-1" style="color:var(--royal);font-family:'Playfair Display',serif;">Reservation Details</h4>
+          <p class="text-muted mb-0" style="font-size:0.9rem;">Record #001 — Maria Santos</p>
+        </div>
+        <a href="records.html" class="btn btn-outline-secondary px-4">
+          <i class="fa-solid fa-arrow-left me-2"></i>Back to Records
+        </a>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="content-card">
+            <div class="card-header-custom">
+              <h5><i class="fa-solid fa-calendar-check me-2"></i>Reservation #001</h5>
+            </div>
+            <div class="card-body-custom">
+              <!-- Status Banner -->
+              <div class="d-flex align-items-center gap-3 mb-4 p-3 rounded-3" style="background:rgba(17,34,80,0.04);border:1px solid rgba(17,34,80,0.08);">
+                <span class="badge-status badge-confirmed" style="font-size:0.9rem;padding:8px 18px;">Confirmed</span>
+                <span style="font-size:0.88rem;color:#666;">This reservation has been confirmed.</span>
+              </div>
+
+              <!-- Personal Info -->
+              <h6 class="fw-bold mb-3 pb-2" style="color:var(--sapphire);border-bottom:2px solid var(--border-light);font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;">
+                <i class="fa-solid fa-user me-2"></i>Guest Information
+              </h6>
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <p class="mb-1" style="font-size:0.78rem;color:#999;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;">Full Name</p>
+                  <p class="fw-bold mb-0" style="color:var(--royal);">Maria Santos</p>
+                </div>
+                <div class="col-md-6">
+                  <p class="mb-1" style="font-size:0.78rem;color:#999;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;">Contact Number</p>
+                  <p class="fw-bold mb-0" style="color:var(--royal);">09111111111</p>
+                </div>
+                <div class="col-md-6">
+                  <p class="mb-1" style="font-size:0.78rem;color:#999;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;">Email Address</p>
+                  <p class="fw-bold mb-0" style="color:var(--royal);">maria.santos@email.com</p>
+                </div>
+                <div class="col-md-6">
+                  <p class="mb-1" style="font-size:0.78rem;color:#999;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;">Occasion</p>
+                  <p class="fw-bold mb-0" style="color:var(--royal);">Birthday Celebration</p>
+                </div>
+              </div>
+
+              <!-- Booking Info -->
+              <h6 class="fw-bold mb-3 pb-2" style="color:var(--sapphire);border-bottom:2px solid var(--border-light);font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;">
+                <i class="fa-solid fa-calendar-check me-2"></i>Booking Information
+              </h6>
+              <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                  <p class="mb-1" style="font-size:0.78rem;color:#999;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;">Reservation Date</p>
+                  <p class="fw-bold mb-0" style="color:var(--royal);">May 10, 2024</p>
+                </div>
+                <div class="col-md-6">
+                  <p class="mb-1" style="font-size:0.78rem;color:#999;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;">Preferred Time</p>
+                  <p class="fw-bold mb-0" style="color:var(--royal);">6:00 PM</p>
+                </div>
+                <div class="col-md-6">
+                  <p class="mb-1" style="font-size:0.78rem;color:#999;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;">Number of Guests</p>
+                  <p class="fw-bold mb-0" style="color:var(--royal);">4 persons</p>
+                </div>
+                <div class="col-md-6">
+                  <p class="mb-1" style="font-size:0.78rem;color:#999;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;">Table Assigned</p>
+                  <p class="fw-bold mb-0" style="color:var(--royal);">Table 3 (Indoor, 4 pax)</p>
+                </div>
+                <div class="col-md-6">
+                  <p class="mb-1" style="font-size:0.78rem;color:#999;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;">Pre-Order</p>
+                  <p class="fw-bold mb-0" style="color:var(--royal);">Chicken Adobo — ₱189.00</p>
+                </div>
+              </div>
+
+              <!-- Notes -->
+              <h6 class="fw-bold mb-3 pb-2" style="color:var(--sapphire);border-bottom:2px solid var(--border-light);font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;">
+                <i class="fa-solid fa-comment me-2"></i>Special Requests
+              </h6>
+              <div class="p-3 rounded-3" style="background:#f8f9fa;border:1px solid #e9ecef;">
+                <p class="mb-0" style="color:#555;font-size:0.93rem;">Window seat preferred. Celebrating birthday. Please prepare a small candle.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIDE PANEL -->
+        <div class="col-lg-4">
+          <div class="content-card mb-3">
+            <div class="card-header-custom">
+              <h5><i class="fa-solid fa-circle-info me-2"></i>Record Info</h5>
+            </div>
+            <div class="card-body-custom">
+              <div class="mb-3">
+                <p class="mb-1" style="font-size:0.78rem;color:#999;font-weight:700;text-transform:uppercase;">Record ID</p>
+                <p class="fw-bold mb-0" style="color:var(--royal);">#001</p>
+              </div>
+              <div class="mb-3">
+                <p class="mb-1" style="font-size:0.78rem;color:#999;font-weight:700;text-transform:uppercase;">Date Submitted</p>
+                <p class="fw-bold mb-0" style="color:var(--royal);">May 9, 2024</p>
+              </div>
+              <div>
+                <p class="mb-1" style="font-size:0.78rem;color:#999;font-weight:700;text-transform:uppercase;">Current Status</p>
+                <span class="badge-status badge-confirmed">Confirmed</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <div class="card-header-custom">
+              <h5><i class="fa-solid fa-link me-2"></i>Actions</h5>
+            </div>
+            <div class="card-body-custom d-flex flex-column gap-2">
+              <a href="records.html" class="btn btn-royal w-100">
+                <i class="fa-solid fa-arrow-left me-2"></i>Back to Records
+              </a>
+              <a href="reservation.html" class="btn btn-outline-secondary w-100">
+                <i class="fa-solid fa-calendar-plus me-2"></i>New Reservation
+              </a>
+              <a href="dashboard.html" class="btn btn-outline-secondary w-100">
+                <i class="fa-solid fa-gauge me-2"></i>Dashboard
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
